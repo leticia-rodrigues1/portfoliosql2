@@ -1,4 +1,4 @@
- ## 👩‍💻 Letícia Rodrigues 31 anos, solteira — Portfólio SQL
+ ## 👩‍💻 Letícia Rodrigues  — Portfólio SQL
  
 🎓 Sou formada em Administração | Pós em Projetos | ADS em andamento
 
