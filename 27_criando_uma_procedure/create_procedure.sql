@@ -1,18 +1,18 @@
 
 
 /* CRIANDO UMA PROCEDURE DE UM 
-PROJETO MONITORAMENTO DE TRANSA«√O 
+PROJETO MONITORAMENTO DE TRANSA√á√ÉO 
 */
 
 --Criando a PROCEDURE 
 CREATE PROCEDURE VerificarTransacaoClienteAprovado
 
--- CRIANDO O PADR√O
-@Cliente NVARCHAR(100) -- Par‚metro de Entrada com o Cliente 
+-- CRIANDO O PADR√ÉO
+@Cliente NVARCHAR(100) -- Par√¢metro de Entrada com o Cliente 
 
 AS 
 BEGIN
-		--Verifica se o cliente possui pelo menos uma transaÁ„o APROVADA
+		--Verifica se o cliente possui pelo menos uma transa√ß√£o APROVADA
 		IF EXISTS(
 		SELECT 1
 		FROM BaseFraude
@@ -20,8 +20,8 @@ BEGIN
 		AND Aprovado = 'Sim'
 )
 
-BEGIN -- Novamente porque vamos chamar uma nova transaÁ„o 
-		-- Verifica se o cliente possui alguma transaÁ„o suspeita (Aprovadas, Valor alto a noite)
+BEGIN -- Novamente porque vamos chamar uma nova transa√ß√£o 
+		-- Verifica se o cliente possui alguma transa√ß√£o suspeita (Aprovadas, Valor alto a noite)
 		IF EXISTS(
 		SELECT 1
 		FROM BaseFraude
@@ -32,14 +32,14 @@ BEGIN -- Novamente porque vamos chamar uma nova transaÁ„o
 )
 
 BEGIN 
-		-- Retorna as transaÁıes SUSPEITAS
+		-- Retorna as transa√ß√µes SUSPEITAS
 		SELECT 
 		DataTransacao, 
 		TipoTransacao,
 		Valor_Transacao,
 		Bandeira, 
 		Aprovado,
-		'TransaÁ„o Suspeita' as verificar
+		'Transa√ß√£o Suspeita' as verificar
 		FROM BaseFraude
 		WHERE Cliente = @Cliente 
 		AND Aprovado = 'Sim'
@@ -49,25 +49,25 @@ BEGIN
 
 		ELSE 
 		BEGIN 
-		-- Caso tenha aprovaÁıes, mas nenhuma suspeita (valor alto + hor·rio) retornar essa mensagem 
+		-- Caso tenha aprova√ß√µes, mas nenhuma suspeita (valor alto + hor√°rio) retornar essa mensagem 
 		SELECT 
-		'Cliente n„o possui TransaÁıes Suspeitas' as Mensagem 
+		'Cliente n√£o possui Transa√ß√µes Suspeitas' as Mensagem 
 		END
 		END 
 
 		ELSE
 		BEGIN 
-		--Caso n„o tenha nenhuma transaÁ„o, traz essa mensagem N„o Aprovado 
+		--Caso n√£o tenha nenhuma transa√ß√£o, traz essa mensagem N√£o Aprovado 
 		SELECT
 		DataTransacao
 		TipoTransacao,
 		Valor_Transacao,
 		Bandeira,
 		Aprovado,
-		'Sem AprovaÁ„o' as Verificar 
+		'Sem Aprova√ß√£o' as Verificar 
 		FROM BaseFraude
 		WHERE Cliente = @Cliente
-		AND Aprovado = 'N„o'
+		AND Aprovado = 'N√£o'
 END
 END 
 
