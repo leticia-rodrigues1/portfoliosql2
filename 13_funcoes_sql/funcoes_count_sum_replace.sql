@@ -1,5 +1,5 @@
 
----------------- FUNÇÕES SQLSERVE ----------------------
+---------------- FUNÃ‡Ã•ES SQLSERVE ----------------------
 -- COUNT 
 -- SUM
 -- REPLACE
@@ -8,7 +8,7 @@
 SELECT *
 FROM tb_netflix
 
--- FUNÇÕES SÃO UTILIZADAS DENTRO DO SELECT LIST
+-- FUNÃ‡Ã•ES SÃƒO UTILIZADAS DENTRO DO SELECT LIST
 SELECT
 	estados,
 	total_usuarios,
@@ -29,7 +29,7 @@ SELECT
 	SUM(total_usuarios) AS Total
 FROM tb_netflix
 
--- REPLACE (FUNÇÕES PARA SUBSTITUIR VALORES DE UMA COLUNA)
+-- REPLACE (FUNÃ‡Ã•ES PARA SUBSTITUIR VALORES DE UMA COLUNA)
 SELECT 
 	estados,
 	total_usuarios,
