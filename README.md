@@ -64,3 +64,9 @@ Desenvolver habilidades sólidas em SQL para atuar com análise de dados, criand
 Sou uma profissional em transição de carreira para a área de dados, com experiência na área bancária e foco em transformar dados em informações relevantes para tomada de decisão.
 
 🚀 Em constante evolução na área de Dados
+
+📫 Contato
+
+LinkedIn: https://www.linkedin.com/in/leticia-rodrigues-a71055147
+
+Email: leticiaradm@outlook.com
