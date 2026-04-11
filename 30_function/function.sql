@@ -1,22 +1,22 @@
 /* 
 FUNCTION
-Já as functions, ou funções, constuma ser mais limitadas, geralmente retornam um único 
+JÃ¡ as functions, ou funÃ§Ãµes, constuma ser mais limitadas, geralmente retornam um Ãºnico 
 valor e podem ser usadas dentro de consultas como se fossem colunas. Assim, cada uma 
-tem a sua utilidade dependendo do que você precisa fazer.
+tem a sua utilidade dependendo do que vocÃª precisa fazer.
 */
 
 /*
 PROCEDURES
-As procedures, ou procedimentos armazenados, são mais versáteis,
-porque podem executar vários comandos de uma vez e podem retornar múltiplos conjuntos de resultados.
+As procedures, ou procedimentos armazenados, sÃ£o mais versÃ¡teis,
+porque podem executar vÃ¡rios comandos de uma vez e podem retornar mÃºltiplos conjuntos de resultados.
 */
 
 /*
-1. Introdução: O que é uma Function?
+1. IntroduÃ§Ã£o: O que Ã© uma Function?
 Uma Function (ou UDF - User Defined Function)
-é um bloco de código que pode receber parâmetros, executar operações e retornar um valor.
+Ã© um bloco de cÃ³digo que pode receber parÃ¢metros, executar operaÃ§Ãµes e retornar um valor.
 
-São muito úteis para reutilizar lógica de negócios, limpar código e encapsular regras de cálculo. 
+SÃ£o muito Ãºteis para reutilizar lÃ³gica de negÃ³cios, limpar cÃ³digo e encapsular regras de cÃ¡lculo. 
 
 */
 
@@ -24,12 +24,12 @@ São muito úteis para reutilizar lógica de negócios, limpar código e encapsular r
 2. Tipos de Functions no SQL Server 
 
 Tipo                              | Retorno                 | Pode ser usada em SELECT	|Exempo de uso 
-**Scalar Function**				  |Valor único              |?							| Calculadora de imposto
+**Scalar Function**				  |Valor Ãºnico              |?							| Calculadora de imposto
 **Inline Table-Valued**			  |Tabela (1 SELECT)        |?							|Filtro de clientes ativos
-**Multi-Statement Table-Valued**  |Tabela (vários steps)    |?							|Lógica mais complexa, com IFs etc.
+**Multi-Statement Table-Valued**  |Tabela (vÃ¡rios steps)    |?							|LÃ³gica mais complexa, com IFs etc.
 
 --Crie uma tabela 
--- Exercício FUCTION 
+-- ExercÃ­cio FUCTION 
  */
 
 IF OBJECT_ID('dbo.tb_transacoes_Func_Json') IS NOT NULL
@@ -88,14 +88,14 @@ SELECT *
 FROM dbo.tb_transacoes_Func_Json;
 
 --==================================================================
--- Exercício 1 criando FUNCTION 
+-- ExercÃ­cio 1 criando FUNCTION 
 
 CREATE FUNCTION fn_Saudacao(@nome VARCHAR (100))
 RETURNS NVARCHAR(100)
 AS
 
 	BEGIN 
-		RETURN 'Olá, ' +@nome + '!' 
+		RETURN 'OlÃ¡, ' +@nome + '!' 
 	END 
 
 
@@ -106,7 +106,7 @@ SELECT
 FROM dbo.tb_transacoes_Func_Json
 
 --===================================================================
--- EXERICÍCIO 2 CRIANDO FUNCTION 
+-- EXERICÃCIO 2 CRIANDO FUNCTION 
 
 CREATE FUNCTION fn_TransacaoFraude()
 RETURNS TABLE
@@ -132,7 +132,7 @@ AS
 		Return 
 		Case
 		when @status = 'Sim'then 'Aprovada com Sucesso'
-		when @status = 'Não' then 'Reprovada com Sucesso'
+		when @status = 'NÃ£o' then 'Reprovada com Sucesso'
 		else 'Status Desconhecido'
 		END 
 END 
@@ -144,14 +144,14 @@ SELECT
 FROM tb_transacoes_Func_Json;
 
 
---- CORREÇÃO DOS CARACTERES
+--- CORREÃ‡ÃƒO DOS CARACTERES
 SELECT 
 		Cliente,
-		REPLACE(Aprovado, 'NÃ£o', 'Não') as Corrigido 
+		REPLACE(Aprovado, 'NÃƒÂ£o', 'NÃ£o') as Corrigido 
 FROM tb_transacoes_Func_Json;
 
 ---=============================================================
---EXERCÍCIO FUNÇÕES
+--EXERCÃCIO FUNÃ‡Ã•ES
 
 CREATE FUNCTION	dbo.fn_conced_desc ( @valor Decimal (10,2))
 
@@ -173,7 +173,7 @@ Returns NVARCHAR (50)
 			BEGIN
 			RETURN 
 		CASE WHEN @valor >3000 then 'Conceder Desconto'
-		ELSE 'Não Conceder Desconto'
+		ELSE 'NÃ£o Conceder Desconto'
 
 		END 
 END 
