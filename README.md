@@ -24,12 +24,19 @@ Os conteúdos foram organizados de forma progressiva, abordando desde conceitos 
 Os conteúdos estão organizados por temas:
 
 📁 01_select_basico
+
 📁 02_filtros_where
+
 📁 03_order_by
+
 📁 04_group_by
+
 📁 05_joins
+
 📁 06_subqueries
+
 📁 07_manipulacao_dados
+
 📁 08_importacao_dados
 
 🛠️ Tecnologias utilizadas
