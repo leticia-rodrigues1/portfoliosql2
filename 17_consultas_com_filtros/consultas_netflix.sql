@@ -1,6 +1,6 @@
 
 
---- EXERCÕCIO ---
+--- EXERC√çCIO ---
 
 SELECT *
 FROM tb_netflix
@@ -8,7 +8,7 @@ FROM tb_netflix
 SELECT 
 		DATA AS [DATAS DO CONSUMO],
 		REPLACE(periodo_de_acess, 'MANHA', 'PERIODO INICIAL') AS HORARIOS,
-		REPLACE (tipo_de_conta, 'PLANO BASICO', 'BSC') AS SERVI«OS,
+		REPLACE (tipo_de_conta, 'PLANO BASICO', 'BSC') AS SERVI√áOS,
 		estados,
 		total_usuarios,
 		segmentos,
